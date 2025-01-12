@@ -16,13 +16,15 @@ h1 {
   text-align: center;
   margin: 0;
 }
-form {
-  background-color: #ffffff;
+.formContainer{
+    background-color: #ffffff;
   box-shadow: 0 20px 60px rgba(65, 50, 100, 0.08);
-  padding: 30px;
-  display: flex;
-  border-radius: 10px;
+  padding: 15px 20px; border-radius: 10px;
+  margin-bottom: 30px;
 }
+form {
+   display: flex;
+  }
 .search-input {
   width: 80%;
   padding: 15px;
@@ -40,6 +42,11 @@ form {
   border: none;
   border-radius: 30px;
   padding: 15px;
+}.hint{
+    margin-top: 5px;
+    line-height: 1.5;
+    font-size: 13px;
+    opacity: 0.6;
 }
 .poem {
   background-color: #ffffff;
@@ -47,14 +54,27 @@ form {
   line-height: 2;
   box-shadow: 0 4px 30px 0 rgba(39, 33, 66, 0.03);
   border-left: 3px solid #885df1;
-  margin: 30px 0;
+ 
   padding: 20px;
 }
+.hidden{
+    display: none;
+}
 footer {
+    margin-top: 30px;
   text-align: center;
   font-size: 15px;
 }
 a,
 .poem strong {
   color: #885df1;
+}
+.generating {
+  animation: blink-animation 1s steps(5, start) infinite;
+}
+
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
 }

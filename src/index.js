@@ -15,7 +15,10 @@ function handleSubmit(event) {
   let context =
     "You are an expert in writing poems. Generate a clear and short poem of 4 lines separating each line with <br/>. Do not include title. Sign the poem with 'Comfort Ibok' inside a strong element at the end NOT at the beginning";
   let apiURL = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apikey}`;
-  axios.get(apiURL).then(displayPoem);
+  let poem = document.querySelector("#poem");
+    poem.classList.remove("hidden");
+    poem.innerHTML = `<div class="generating">⏳ Generating a French Poem about ${searchInput.value}.</div>`;
+    axios.get(apiURL).then(displayPoem);
 }
 
 let poemElement = document.querySelector("form");
